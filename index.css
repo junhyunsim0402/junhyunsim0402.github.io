@@ -4,7 +4,8 @@
     padding: 0;
     font-size: 12px;
 }
-body{
+
+body {
     display: block;
 }
 
@@ -60,14 +61,53 @@ a {
     list-style: none;
 }
 
-.menu li {
+.menu ul li {
+    position: relative;
     padding: 0 12px;
-    font-size: 14px;
-    font-weight: bold;
 }
 
-.menu a {
+.menu li a {
     color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0;
+}
+
+.menu .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    list-style: none;
+    min-width: 100px;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.menu ul li:hover .submenu {
+    display: block;
+}
+
+.menu .submenu li {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.menu .submenu li a {
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+    padding: 8px 10px;
+}
+
+.menu .submenu li a:hover {
+    background-color: #f5f5f5;
+    color: #000;
 }
 
 .underline {
@@ -115,7 +155,8 @@ h3 {
     color: #999999;
     margin: 20px 0;
 }
-.itemimg{
+
+.itemimg {
     width: 380px;
 }
 
@@ -175,62 +216,63 @@ h3 {
     text-align: center;
     font-size: 11px;
     color: #999;
-    line-height: 1.8;
 }
 
-#items{
+#items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-#items > .item{
+#items > .item {
     width: 380px;
     margin: 30px 0px;
 }
 
-#items > .item > .item-img{
+#items > .item > .item-img {
     width: 100%;
 }
 
-#items .colorReview{
+#items .colorReview {
     display: flex;
     justify-content: space-between;
     margin: 5px 0px;
 }
 
-#items .color > span{
+#items .color > span {
     width: 10px;
     height: 10px;
     display: inline-block;
     border: 1px solid #dbdbdb;
 }
-
-#items .review{
+.menu .red a{
+    color: red;
+}
+#items .review {
     color: #999999;
 }
 
-#items .itemName{
+#items .itemName {
     margin: 5px 0px;
 }
 
-#items .itemName > .size{
+#items .itemName > .size {
     font-size: 10px;
     color: #999999;
     margin: 1px 0px;
 }
 
-#items .itemPrice{
+#items .itemPrice {
     position: relative;
     margin: 5px 0px;
 }
 
-#items .price{
+#items .price {
     text-decoration: line-through;
     color: #999999;
 }
 
-#items .disc{
+#items .disc {
     position: absolute;
     top: 0;
     right: 0px;
@@ -238,11 +280,11 @@ h3 {
     color: red;
     font-weight: bold;
 }
+
 #quick-menu {
     position: fixed;
     right: 20px;
     top: 50%;
-    transform: translateY(-50%);
     z-index: 999;
     background-color: #fff;
     border: 1px solid #dbdbdb;
@@ -261,19 +303,10 @@ h3 {
     justify-content: center;
 }
 
-
 #quick-menu img {
     width: 24px;
     height: 24px;
     display: block;
-}
-
-#quick-menu .to-top, 
-#quick-menu .to-bottom {
-    background-color: #f9f9f9;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
 }
 
 #quick-menu a {
@@ -282,5 +315,4 @@ h3 {
     height: 100%;
     align-items: center;
     justify-content: center;
-    color: inherit;
 }
